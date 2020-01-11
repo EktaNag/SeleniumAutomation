@@ -1,5 +1,6 @@
 package pageObjectModel;
 
+import org.omg.PortableServer.THREAD_POLICY_ID;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,6 +48,12 @@ public void hoverMouse(WebElement element)
 {
     Actions action = new Actions(driver);
     action.moveToElement(element).build().perform();
+
+//    try {
+//        Thread.sleep(2000);
+//    } catch (InterruptedException e) {
+//        e.printStackTrace();
+//    }
 }
 
 

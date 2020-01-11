@@ -37,7 +37,7 @@ public class MegaStoreLoginPage extends BasePOM {
 
     By departmentsDropDown = By.xpath("//div[@id='responsive-menu']//span[text()='Shop by']");
     By categories = By.xpath("//ul[@class='dropdown-menu header-dropdown']/li//span/..");
-    // By subCategories = By.xpath("//ul[@class='dropdown-menu header-dropdown']/li//span/../../div/ul[@class='categories']/li/a[not(contains(.,'View All'))]");
+
     By subCategories = By.xpath("//div[contains(@class,'open') and contains(@class,'container-dropdown')]/ul[1]/li[not(contains(@class,'view-all'))]");
 
     //Creating all the methods for the US MegaStore page
@@ -123,11 +123,11 @@ public class MegaStoreLoginPage extends BasePOM {
         List<WebElement> DDcategories = driver.findElements(categories);
         System.out.println("DDcategories size :" + DDcategories.size());
 
-        for (int i = 0; i < DDcategories.size(); i++) {
+        for (int i = 0;i < DDcategories.size();i++) {
             hoverMouse(DDcategories.get(i));
 
             List<WebElement> DDsubCategories = driver.findElements(subCategories);
-            for (int j = 0; j < DDsubCategories.size(); j++) {
+            for (int j = 0;j < DDsubCategories.size();j++) {
 
                 String cat = DDsubCategories.get(j).getText();
 

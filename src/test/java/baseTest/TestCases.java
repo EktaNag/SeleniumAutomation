@@ -9,7 +9,8 @@ public class TestCases extends BaseTest {
     @DataProvider
     public Object[][] getData()
     {
-        return new Object[][]{{"Ekta Nag"},
+        return new Object[][]{
+                {"Ekta NAg"},
                 {"Karan Nag"},
                 {"Arjun Nag"},
                 {"Rahul Nag"}
@@ -22,8 +23,8 @@ public class TestCases extends BaseTest {
 
 
         LoginPage loginPage=new LoginPage(driver);
-loginPage.searchValue(val+ Keys.ENTER);
-loginPage.getSearchResultHeadingWithLinks();
+        loginPage.searchValue(val+ Keys.ENTER);
+        loginPage.getSearchResultHeadingWithLinks();
 
 
     }
