@@ -3,11 +3,13 @@ package shared;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
 public class Utils {
@@ -18,7 +20,10 @@ public class Utils {
         switch (executionType.toLowerCase()) {
             case "local":
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.setExperimentalOption("useAutomationExtension", false);
+                options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+                driver = new ChromeDriver(options);
                 break;
 
             case "remote":
