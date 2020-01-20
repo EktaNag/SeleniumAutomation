@@ -25,7 +25,6 @@ public class BaseTest {
     }
 
 
-
     @AfterMethod(alwaysRun = true)
     public void closeBrowser(ITestResult result)
     {
