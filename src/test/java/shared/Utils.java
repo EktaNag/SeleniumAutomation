@@ -34,8 +34,9 @@ public class Utils {
                 capability.setBrowserName("chrome");
 
                 try {
-//                    driver=new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"),capability);//ip address or loopback address is localhost because server is running on our local machine
-                    driver=new RemoteWebDriver(new URL("http://192.168.2.251:4444/wd/hub"),capability);//ip address is localhost because server is running on our local machine
+                    driver=new RemoteWebDriver(new URL("http://127.0.0.1:4040/wd/hub"),capability);
+// ip address or loopback address is localhost because server is running on our local machine
+                   // driver=new RemoteWebDriver(new URL("http://192.168.2.251:4040/wd/hub"),capability);//ip address is localhost because server is running on our local machine
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
