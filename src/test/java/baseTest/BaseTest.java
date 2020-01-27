@@ -19,7 +19,7 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp(Method method)
     {
-        driver=Utils.browserLaunch("remote");
+        driver=Utils.browserLaunch("local");
         System.out.println("The method name is : "+method.getName());
         System.out.println();
     }
