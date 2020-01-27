@@ -1,6 +1,6 @@
 package pageObjectModel;
 
-import org.omg.PortableServer.THREAD_POLICY_ID;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
