@@ -1,8 +1,10 @@
 package baseTest;
 
 import org.testng.annotations.Test;
+import pageObjectModel.GitHubUptimeOutagePage;
 import pageObjectModel.GitHubUptimePage;
 import pageObjectModel.GithubstatusLogin;
+import shared.Utils;
 
 public class GithubWebsiteTest extends BaseTest{
 
@@ -23,4 +25,17 @@ public class GithubWebsiteTest extends BaseTest{
 
     }
 
+
+//implementing resolutions
+
+    @Test
+    @org.testng.annotations.Parameters({"x","y"})
+    public void openPage(String xaxis,String yaxis)
+    {
+        Utils.getWindowResolution(xaxis,yaxis,driver);
+        driver.get("https://www.githubstatus.com/uptime");
+        GitHubUptimeOutagePage obj=new GitHubUptimeOutagePage(driver);
+        obj.getYear(2018);
+
+    }
 }
