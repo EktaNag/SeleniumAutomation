@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pageObjectModel.LoginPage;
 
 public class TestCases extends BaseTest {
-    @DataProvider
+    @DataProvider(indices = {1})
     public Object[][] getData()
     {
         return new Object[][]{
