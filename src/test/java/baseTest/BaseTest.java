@@ -49,7 +49,9 @@ public class BaseTest  {
     @BeforeMethod(alwaysRun = true)
     public void setUp(Method method)
     {
+
         extentTest = report.createTest(method.getName());
+
 
         driver=Utils.browserLaunch("local");
         System.out.println("The method name is : "+method.getName());
