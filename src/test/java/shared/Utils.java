@@ -1,16 +1,22 @@
 package shared;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class Utils {
@@ -70,4 +76,27 @@ public static void getWindowResolution(String xaxis,String yaxis,WebDriver drive
             e.printStackTrace();
         }
     }
+
+    //This method is to capture the screenshot and return the path of the screenshot.
+
+    public static String getScreenhot(WebDriver driver, String screenshotName) throws Exception {
+        String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        //after execution, you could see a folder "FailedTestsScreenshots" 
+        String destination = "F:\\GitHub25thJan2020\\ExtentReportSeleniumAutomationProject\\FailedTestCasesScreenshot"+screenshotName+dateName+".png";
+        File finalDestination = new File(destination);
+        FileUtils.copyFile(source, finalDestination);
+        return destination;
+    }
+
+
+
+
+
+
+
+
+
+
 }
